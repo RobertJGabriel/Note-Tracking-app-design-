@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +16,9 @@
 
     <!-- Custom CSS -->
     <link href="assets/css/sidemenu.css" rel="stylesheet">
-      <link href="assets/css/roboto.min.css" rel="stylesheet">
-        <link href="assets/css/material.min.css" rel="stylesheet">
-        <link href="assets/css/ripples.min.css" rel="stylesheet">
+    <link href="assets/css/roboto.min.css" rel="stylesheet">
+    <link href="assets/css/material.min.css" rel="stylesheet">
+    <link href="assets/css/ripples.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -31,17 +30,19 @@
 
 <body>
 
-        <div class="navbar navbar-default navbar-fixed-top" >
-          <div class="container">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
             <div class="navbar-header">
-                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><li class="mdi-navigation-menu"></li></a>
-            </div>   
-          </div>
+                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+                    <li class="mdi-navigation-menu"></li>
+                </a>
+            </div>
         </div>
-    
-    
-    
-    
+    </div>
+
+
+
+
     <div id="wrapper">
 
         <!-- Sidebar -->
@@ -59,9 +60,9 @@
                     <a href="notes.html">Notes</a>
                 </li>
                 <li>
-                               <a href="calendar.html">calendar</a>
+                    <a href="calendar.html">calendar</a>
                 </li>
-   
+
                 <li>
                     <a href="settings.html">Settings</a>
                 </li>
@@ -77,33 +78,35 @@
             <div class="container" style="margin-top:60px;">
                 <div class="row">
                     <div class="col-md-4">
-              
+
                     </div>
-                    
+
                     <div class="col-md-4">
-                        
-                        
-                       <div class="panel panel-default">
-    <div class="panel-heading"><div class="form-group">
-    <input class="form-control floating-label" id="focusedInput" type="text" placeholder="Title" data-hint="You should really write the class and date here">
-</div></div>
-    <div class="panel-body">
-        <div class="form-group">
-         
-            <div class="col-lg-10">
-                <textarea class="form-control" rows="14" id="textArea" placeholder="Focus to show the hint" data-hint="You should really write something here"></textarea>
-            
-            </div>
-        </div>
-    </div>
-</div>  
-                        
-                        
-                        
-                        
+
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="form-group">
+                                    <input class="form-control floating-label" id="focusedInput" type="text" placeholder="Title" data-hint="You should really write the class and date here">
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group">
+
+                                    <div class="col-lg-10">
+                                        <textarea class="form-control" rows="14" id="textArea" placeholder="Focus to show the hint" data-hint="You should really write something here"></textarea>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
                     </div>
-                     <div class="col-md-4">
-               
+                    <div class="col-md-4">
+
                     </div>
                 </div>
             </div>
@@ -113,24 +116,27 @@
     </div>
     <!-- /#wrapper -->
     <footer class="footer">
-    
-    
-    
-     <div class="container">
-                <div class="row-fluid">
-                    <div class="fatButtons" >  <li style="text-align:center;width:100%;font-size:40px;" class="mdi-action-home"></li>
-    </div>
-                          <div class="fatButtons">  <li style="text-align:center;width:100%;font-size:40px;" class="mdi-action-search"></li>
-    </div>
-                     <div class="fatButtons">  <li style="text-align:center;width:100%;font-size:40px;" class="mdi-action-label"></li>
-    </div>
+
+
+
+        <div class="container">
+            <div class="row-fluid">
+                <div class="fatButtons">
+                    <li style="text-align:center;width:100%;font-size:40px;" class="mdi-action-home"></li>
+                </div>
+                <div class="fatButtons">
+                    <li style="text-align:center;width:100%;font-size:40px;" class="mdi-action-search"></li>
+                </div>
+                <div class="fatButtons">
+                    <li style="text-align:center;width:100%;font-size:40px;" class="mdi-action-label"></li>
                 </div>
             </div>
-    
-    
-    
-    
-    
+        </div>
+
+
+
+
+
     </footer>
     <!-- jQuery -->
     <script src="assets/js/jquery.js"></script>
@@ -138,22 +144,18 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="assets/js/bootstrap.js"></script>
 
-        <script src="assets/js/ripples.min.js"></script>
-        <script src="assets/js/material.min.js"></script>
+    <script src="assets/js/ripples.min.js"></script>
+    <script src="assets/js/material.min.js"></script>
     <!-- Menu Toggle Script -->
     <script>
-        
-                 $(document).ready(function() {
-                // This command is used to initialize some elements and make them work properly
-                $.material.init();
-            });
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-  $("#wrapper").toggleClass("toggled");
-    });
-        
-        
-    
+        $(document).ready(function () {
+            // This command is used to initialize some elements and make them work properly
+            $.material.init();
+        });
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
     </script>
 
 </body>
