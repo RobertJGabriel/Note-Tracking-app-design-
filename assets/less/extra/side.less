@@ -8,7 +8,7 @@
             // Height variables (appears count calculates by raw css)
             @height3: 100%; // Appears 4 times
 
-@smartphones :  ~"only screen and (min-width: 720px) and (max-width: 959px)";
+@smartphones :  ~"only screen and (max-width: 760px)";
 
 
             html {
@@ -44,8 +44,8 @@
                 padding-left: 0;
                 padding-left: 250px;
                 #sidebar-wrapper {
-                    width: @width1;
-                    width: @width4;
+              width: 250px;
+                width: 0px;
                 }
                 #page-content-wrapper {
                     margin-right: -250px;
@@ -66,8 +66,7 @@
                 overflow-y: auto;
                 position: fixed;
                 transition: all 0.5s ease;
-                width: @width1;
-                width: @width4;
+              
                 z-index: 1000;
             }
             
@@ -85,7 +84,7 @@
                 padding: 0;
                 position: absolute;
                 top: 0;
-                width: @width1;
+                width: 250px;
                 li {
                     line-height: 40px;
                     text-indent: 20px;
