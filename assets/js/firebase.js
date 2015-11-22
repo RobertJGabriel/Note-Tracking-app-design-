@@ -14,7 +14,7 @@ window.onload = function () {
             '#/logout': {
                 form: 'frmLogout',
                 controller: 'logout'
-            }
+            },
             '#/profile': {
                 form: 'frmProfile',
                 controller: 'profile',
