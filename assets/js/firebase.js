@@ -3,7 +3,7 @@ window.onload = function () {
         "use strict";
 
         // the main firebase reference
-        var rootRef = new Firebase('https://projectbird.firebaseapp.com');
+        var rootRef = new Firebase('https://projectbird.firebaseio.com/');
 
         // pair our routes to our form elements and controller
         var routeMap = {
