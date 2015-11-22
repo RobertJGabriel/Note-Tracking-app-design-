@@ -14,11 +14,7 @@ window.onload = function () {
             '#/logout': {
                 form: 'frmLogout',
                 controller: 'logout'
-            },
-            '#/register': {
-                form: 'frmRegister',
-                controller: 'register'
-            },
+            }
             '#/profile': {
                 form: 'frmProfile',
                 controller: 'profile',
@@ -304,7 +300,6 @@ window.onload = function () {
 
         Path.map("#/").to(prepRoute);
         Path.map("#/logout").to(prepRoute);
-        Path.map("#/register").to(prepRoute);
         Path.map("#/profile").to(prepRoute);
 
         Path.root("#/");
