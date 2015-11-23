@@ -15,9 +15,9 @@ window.onload = function () {
                 form: 'frmLogout',
                 controller: 'logout'
             },
-            '#/notes': {
-                form: 'frmNotes',
-                controller: 'notes'
+            '#/register': {
+                form: 'frmRegister',
+                controller: 'register'
             },
             '#/profile': {
                 form: 'frmProfile',
@@ -193,16 +193,16 @@ window.onload = function () {
             rootRef.unauth();
         };
 
-        controllers.notes = function (form) {
+        controllers.register = function (form) {
 
-            // Form submission for notesing
+            // Form submission for registering
             form.on('submit', function (e) {
 
                 var userAndPass = $(this).serializeObject();
                 var loginPromise = createUserAndLogin(userAndPass);
                 e.preventDefault();
 
-                //  handleAuthResponse(loginPromise, 'profile');
+                handleAuthResponse(loginPromise, 'profile');
 
             });
 
@@ -213,9 +213,9 @@ window.onload = function () {
             var user = rootRef.getAuth();
             var userRef;
 
-            // If no current user send to notes page
+            // If no current user send to register page
             if (!user) {
-                routeTo('notes');
+                routeTo('register');
                 return;
             }
 
@@ -261,10 +261,10 @@ window.onload = function () {
             var currentUser = rootRef.getAuth();
 
             // if authentication is required and there is no
-            // current user then go to the notes page and
+            // current user then go to the register page and
             // stop executing
             if (formRoute.authRequired && !currentUser) {
-                routeTo('notes');
+                routeTo('register');
                 return;
             }
 
@@ -299,12 +299,12 @@ window.onload = function () {
         /// Routes
         ///  #/         - Login
         //   #/logout   - Logut
-        //   #/notes - notes
+        //   #/register - Register
         //   #/profile  - Profile
 
         Path.map("#/").to(prepRoute);
         Path.map("#/logout").to(prepRoute);
-        Path.map("#/notes").to(prepRoute);
+        Path.map("#/register").to(prepRoute);
         Path.map("#/profile").to(prepRoute);
 
         Path.root("#/");
