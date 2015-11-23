@@ -10,34 +10,32 @@
     <!-- Custom CSS -->
     <link href="assets/less/style.css" rel="stylesheet">
 
-    <style>
-        form {
-            display: none;
-        }
 
-    </style>
 </head>
 
 <body>
-
-    <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <div class="row">
-                    <div class="col-md-4">
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
-                            <li class="mdi-navigation-menu"></li>
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <nav class="navbar navbar-material-light-blue shadow-z-1" style="margin-bottom: 0px;">
+        <div class="navbar-header">
+            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+                <li class="mdi-navigation-menu"></li>
+            </a>
         </div>
+    </nav>
+    <!-- ALERT BOX -->
+
+
+    <div id="alert" class="alert alert-dismissible alert-warning">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <h4 id="alert-title">You are not logged in</h4>
+        <p id="alert-detail"></p>
     </div>
+    <!-- / ALERT BOX -->
+
+
 
     <div id="wrapper">
-
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
+        <div id="sidebar-wrapper" class="nobottom">
             <ul class="sidebar-nav">
                 <li> <a href="#/">Login</a>
                 </li>
@@ -47,55 +45,93 @@
                 </li>
             </ul>
         </div>
-
-
-
         <div id="container" class="container">
-            <!-- LOGIN -->
-            <form id="frmLogin" role="form">
-                <h2>Login</h2>
-                <h4>Login with</h4>
-                <a href="#" class="btn btn-info bt-social" data-provider="twitter">Twitter</a>
-            </form>
-            <!-- / LOGIN -->
-            <!-- LOGOUT -->
-            <form id="frmLogout" role="form">
-                <h2>You are logged out!</h2>
-            </form>
-            <!-- / LOGOUT -->
+            <div class="row">
+                <div class="col-md-4">
 
-            <!-- PROFILE -->
-            <form id="frmProfile" role="form">
-                <h2>Profile</h2>
-
-                <br />
-                <div class="form-group">
-                    <label for="txtName">Name</label>
-                    <input type="text" class="form-control" id="txtName" placeholder="Name" name="name" />
                 </div>
-                <div class="form-group">
-                    <label for="ddlDino">Favorite Dinosaur</label>
-                    <select id="ddlDino" name="favoriteDinosaur" class="form-control">
-                        <option>None</option>
-                        <option>Pteranodon</option>
-                        <option>Lambeosaurus</option>
-                        <option>Stegosaurus</option>
-                        <option>Daspletosaurus</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Update</button>
-            </form>
-            <!-- / PROFILE -->
-            <hr />
-            <!-- ALERT BOX -->
-            <div id="alert" class="alert" role="alert">
-                <h4 id="alert-title">You are not logged in</h4>
 
-                <p id="alert-detail"></p>
+                <div class="col-md-4">
+                    <!-- LOGIN -->
+                    <form id="frmLogin" role="form">
+                        <h2>Login</h2>
+                        <a href="#" class="btn btn-info bt-social" data-provider="twitter">Twitter</a>
+                    </form>
+                    <!-- / LOGIN -->
+
+
+                    <!-- LOGOUT -->
+                    <form id="frmLogout" role="form">
+                        <h2>You are logged out!</h2>
+                    </form>
+                    <!-- / LOGOUT -->
+
+
+
+                    <!-- PROFILE -->
+                    <form id="frmProfile" role="form">
+                        <h2>Profile</h2>
+
+                        <div class="form-group">
+                            <label for="txtName">Name</label>
+                            <input type="text" class="form-control" id="txtName" placeholder="Name" name="name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="ddlDino">Favorite Dinosaur</label>
+                            <select id="ddlDino" name="favoriteDinosaur" class="form-control">
+                                <option>None</option>
+                                <option>Pteranodon</option>
+                                <option>Lambeosaurus</option>
+                                <option>Stegosaurus</option>
+                                <option>Daspletosaurus</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                    <!-- / PROFILE -->
+
+                </div>
+                <div class="col-md-4">
+
+                </div>
             </div>
-            <!-- / ALERT BOX -->
         </div>
+
+
+
+
+
     </div>
+
+
+    <footer class="footer">
+
+
+
+        <div class="container">
+            <div class="row-fluid">
+                <div class="fatButtons">
+                    <li style="text-align:center;width:100%;font-size:40px;" class="mdi-action-home"></li>
+                </div>
+                <div class="fatButtons">
+                    <li style="text-align:center;width:100%;font-size:40px;" class="mdi-action-search"></li>
+                </div>
+                <div class="fatButtons">
+                    <li style="text-align:center;width:100%;font-size:40px;" class="mdi-action-label"></li>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </footer>
+
+
+
+
+
     <script type='text/javascript' src="https://cdn.firebase.com/js/client/1.1.1/firebase.js"></script>
     <script type='text/javascript' src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.0.0/jquery.serialize-object.compiled.js"></script>

@@ -8,6 +8,12 @@
             // Height variables (appears count calculates by raw css)
             @height3: 100%; // Appears 4 times
             @smartphones : ~"only screen and (max-width: 760px)";
+            form {
+                display: none;
+            }
+            .nobottom {
+                margin-bottom: -0px;
+            }
             html {
                 height: @height3;
                 min-width: @width0;
@@ -38,6 +44,7 @@
                 padding-left: 250px;
                 #sidebar-wrapper {
                     width: 250px;
+                    position: absolute;
                     width: 0px;
                 }
                 #page-content-wrapper {
