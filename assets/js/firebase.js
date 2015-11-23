@@ -247,6 +247,56 @@ window.onload = function () {
 
         };
 
+
+        controllers.notes = function (form) {
+            // Check the current user
+            var user = rootRef.getAuth();
+            var notesRef;
+
+            // If no current user send to register page
+            if (!user) {
+                routeTo('register');
+                return;
+            }
+
+            // Load user info
+            notesRef = rootRef.child('users').child(user.uid);
+            notesRef.once('value', function (snap) {
+                var user = snap.val();
+                if (!user) {
+                    return;
+                }
+
+                // set the fields
+                form.find('#subject').val(user.subject);
+                form.find('#notes').val(user.notes);
+            });
+
+            // Save user's info to Firebase
+            form.on('submit', function (e) {
+                e.preventDefault();
+                var userInfo = $(this).serializeObject();
+
+                notesRef.set(userInfo, function onComplete() {
+
+                    // show the message if write is successful
+                    showAlert({
+                        title: 'Successfully saved!',
+                        detail: 'You are still logged in',
+                        className: 'alert-success'
+                    });
+
+                });
+            });
+
+        };
+
+
+
+
+
+
+
         /// Routing
         ////////////////////////////////////////
 
@@ -299,6 +349,7 @@ window.onload = function () {
         //   #/profile  - Profile
 
         Path.map("#/").to(prepRoute);
+        Path.map("#/logout").to(prepRoute);
         Path.map("#/logout").to(prepRoute);
         Path.map("#/profile").to(prepRoute);
 

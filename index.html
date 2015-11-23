@@ -2,15 +2,15 @@
 <html>
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title> Planote</title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>Planote</title>
     <!-- Bootstrap Core CSS -->
     <link href="assets/dist/style.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link href="assets/less/style.css" rel="stylesheet">
-
-
 </head>
 
 <body>
@@ -24,7 +24,7 @@
     <!-- ALERT BOX -->
 
 
-    <div id="alert" class="alert alert-dismissible alert-warning">
+    <div id="alert" class="alert alert-dismissible alert-warning" style="margin-bottom:0px;">
         <button type="button" class="close" data-dismiss="alert">×</button>
         <h4 id="alert-title">You are not logged in</h4>
         <p id="alert-detail"></p>
@@ -51,25 +51,30 @@
 
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 area" id="frmLogin">
                     <!-- LOGIN -->
-                    <form id="frmLogin" role="form">
+                    <form role="form">
                         <h2>Login</h2>
                         <a href="#" class="btn btn-info bt-social" data-provider="twitter">Twitter</a>
                     </form>
                     <!-- / LOGIN -->
+                </div>
 
 
+
+                <div class="col-md-4 area" id="frmLogout">
                     <!-- LOGOUT -->
-                    <form id="frmLogout" role="form">
+                    <form role="form">
                         <h2>You are logged out!</h2>
                     </form>
                     <!-- / LOGOUT -->
+                </div>
 
+                <div class="col-md-4 area" id="frmProfile">
 
 
                     <!-- PROFILE -->
-                    <form id="frmProfile" role="form">
+                    <form role="form">
                         <h2>Profile</h2>
 
                         <div class="form-group">
@@ -89,10 +94,31 @@
                         <button type="submit" class="btn btn-primary">Update</button>
                     </form>
                     <!-- / PROFILE -->
-
                 </div>
-                <div class="col-md-4">
 
+
+
+                <div class="col-md-4 area" id="notes">
+                    <form role="form">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="form-group">
+                                    <input class="form-control floating-label" id="subject" type="text" placeholder="Title" name="subject" data-hint="You should really write the class and date here">
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group">
+
+                                    <div class="col-lg-10">
+                                        <textarea class="form-control" rows="14" id="notes" placeholder="Focus to show the hint" name="notes" data-hint="You should really write something here"></textarea>
+
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
