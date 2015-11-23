@@ -27,6 +27,14 @@ window.onload = function () {
                 controller: 'notes',
                 authRequired: true // must be logged in to get here
             },
+
+
+
+            '#/calendar': {
+                form: 'frmcalendar',
+                controller: 'calendar',
+                authRequired: true // must be logged in to get here
+            },
         };
 
         // create the object to store our controllers
@@ -286,6 +294,18 @@ window.onload = function () {
         };
 
 
+        controllers.calendar = function (form) {
+            // Check the current user
+            var user = rootRef.getAuth();
+            var userRef;
+
+            // If no current user send to register page
+            if (!user) {
+                routeTo('login');
+                return;
+            }
+
+        };
 
 
 
@@ -346,7 +366,7 @@ window.onload = function () {
 
         Path.map("#/").to(prepRoute);
         Path.map("#/logout").to(prepRoute);
-
+        Path.map("#/calendar").to(prepRoute);
         Path.map("#/profile").to(prepRoute);
         Path.map("#/notes").to(prepRoute);
         Path.root("#/");
