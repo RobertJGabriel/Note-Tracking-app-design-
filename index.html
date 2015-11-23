@@ -1,245 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Simple Sidebar - Start Bootstrap Template</title>
-
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title> Planote</title>
     <!-- Bootstrap Core CSS -->
     <link href="assets/dist/style.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="assets/less/style.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
 <body>
-
-    <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-               
-                
-                  <div class="row">
-                    <div class="col-md-4">
- <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
-                    <li class="mdi-navigation-menu"></li>
-                </a>
-                    </div>
-
-                 
-                              <div class="col-md-8">
-<h1>Thurdays : 7am </h1>
-                    </div>
-                </div>
-
-                
-
-            </div>
+    <nav class="navbar navbar-material-light-blue shadow-z-1" style="margin-bottom: 0px;">
+        <div class="navbar-header">
+            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+                <li class="mdi-navigation-menu"></li>
+            </a>
         </div>
-    </div>
+    </nav>
+    <!-- ALERT BOX -->
 
+
+    <div id="alert" class="alert alert-dismissible alert-warning">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <h4 id="alert-title">You are not logged in</h4>
+        <p id="alert-detail"></p>
+    </div>
+    <!-- / ALERT BOX -->
 
 
 
     <div id="wrapper">
-
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
+        <div id="sidebar-wrapper" class="nobottom">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                       Amazingly Sexy App
-                    </a>
+                <li> <a href="#/">Login</a>
                 </li>
-                <li>
-                    <a href="index.html">Dashboard</a>
+                <li> <a href="#/logout">Logout</a>
                 </li>
-                <li>
-                    <a href="notes.html">Notes</a>
-                </li>
-                <li>
-                    <a href="calendar.html">calendar</a>
-                </li>
-
-                <li>
-                    <a href="settings.html">Settings</a>
-                </li>
-                <li>
-                    <a href="login.html">Logout</a>
+                <li> <a href="#/profile">Profile</a>
                 </li>
             </ul>
         </div>
-        <!-- /#sidebar-wrapper -->
+        <div id="container" class="container">
+            <div class="row">
+                <div class="col-md-4">
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper" style="overflow: auto;height: 100%;">
-            <div class="container" style="margin-top:60px;">
-                <div class="row">
-                    <div class="col-md-4">
+                </div>
 
-                    </div>
-
-                    <div class="col-md-4">
-
-
+                <div class="col-md-4">
+                    <!-- LOGIN -->
+                    <form id="frmLogin" role="form">
+                        <h2>Login</h2>
+                        <a href="#" class="btn btn-info bt-social" data-provider="twitter">Twitter</a>
+                    </form>
+                    <!-- / LOGIN -->
 
 
+                    <!-- LOGOUT -->
+                    <form id="frmLogout" role="form">
+                        <h2>You are logged out!</h2>
+                    </form>
+                    <!-- / LOGOUT -->
 
-                        <div class="panel panel-danger">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">9 - 10 am : It Law</h3> <span class="quickAdd"><a href="notes.html"><li class="mdi-content-add-circle-outline"></li></a></span>
-                            </div>
-                            <div class="panel-body">
-                               Hi all
-<br>
-For this Thursday in class can I have a print out of the report for assignment 2 from each group (1 report per group), in addition to uploading a PDF of the report to TurnitIn on Blackboard.
-                                <br>
-Thanks
-Lisa
-                            </div>
+
+
+                    <!-- PROFILE -->
+                    <form id="frmProfile" role="form">
+                        <h2>Profile</h2>
+
+                        <div class="form-group">
+                            <label for="txtName">Name</label>
+                            <input type="text" class="form-control" id="txtName" placeholder="Name" name="name" />
                         </div>
-
-
-
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">10 - 11 am : Gym</h3><span class="quickAdd"><a href="notes.html"><li class="mdi-content-add-circle-outline"></li></a></span>
-                            </div>
-                            <div class="panel-body">
-                                         Hi all
-<br>
-For this Thursday in class can I have a print out of the report for assignment 2 from each group (1 report per group), in addition to uploading a PDF of the report to TurnitIn on Blackboard.
-                                <br>
-Thanks
-Lisa
-                            </div>
+                        <div class="form-group">
+                            <label for="ddlDino">Favorite Dinosaur</label>
+                            <select id="ddlDino" name="favoriteDinosaur" class="form-control">
+                                <option>None</option>
+                                <option>Pteranodon</option>
+                                <option>Lambeosaurus</option>
+                                <option>Stegosaurus</option>
+                                <option>Daspletosaurus</option>
+                            </select>
                         </div>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                    <!-- / PROFILE -->
 
+                </div>
+                <div class="col-md-4">
 
-
-                        <div class="panel panel-warning">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">1 - 2 am : Superman</h3>
-                                <span class="quickAdd"><a href="notes.html"><li class="mdi-content-add-circle-outline"></li></a></span>
-                            </div>
-                            <div class="panel-body">
-                                          Hi all
-<br>
-For this Thursday in class can I have a print out of the report for assignment 2 from each group (1 report per group), in addition to uploading a PDF of the report to TurnitIn on Blackboard.
-                                <br>
-Thanks
-Lisa
-                            </div>
-                        </div>
-
-
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">9 - 10 am : Advanced Web</h3>
-                                <span class="quickAdd"><a href="notes.html"><li class="mdi-content-add-circle-outline"></li></a></span>
-                            </div>
-                            <div class="panel-body">
-                                         Hi all
-<br>
-For this Thursday in class can I have a print out of the report for assignment 2 from each group (1 report per group), in addition to uploading a PDF of the report to TurnitIn on Blackboard.
-                                <br>
-Thanks
-Lisa
-                            </div>
-                        </div>
-
-
-                        <div class="panel panel-warning">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">12 - 14 am : It Law</h3>
-                                <span class="quickAdd"><a href="notes.html"><li class="mdi-content-add-circle-outline"></li></a></span>
-                            </div>
-                            <div class="panel-body">
-                                          Hi all
-<br>
-For this Thursday in class can I have a print out of the report for assignment 2 from each group (1 report per group), in addition to uploading a PDF of the report to TurnitIn on Blackboard.
-                                <br>
-Thanks
-Lisa
-                            </div>
-                        </div>
-
-
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">9 - 10 am : Batman</h3>
-                                <span class="quickAdd"><a href="notes.html"><li class="mdi-content-add-circle-outline"></li></a></span>
-                            </div>
-                            <div class="panel-body">
-                                        Hi all
-<br>
-For this Thursday in class can I have a print out of the report for assignment 2 from each group (1 report per group), in addition to uploading a PDF of the report to TurnitIn on Blackboard.
-                                <br>
-Thanks
-Lisa
-                            </div>
-                        </div>
-
-
-                        <div class="panel panel-warning">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">9 - 10 am : Design</h3>
-                                <span class="quickAdd"><a href="notes.html"><li class="mdi-content-add-circle-outline"></li></a></span>
-                            </div>
-                            <div class="panel-body">
-                                            Hi all
-<br>
-For this Thursday in class can I have a print out of the report for assignment 2 from each group (1 report per group), in addition to uploading a PDF of the report to TurnitIn on Blackboard.
-                                <br>
-Thanks
-Lisa
-                            </div>
-                        </div>
-
-
-                        <div class="panel panel-danger">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">9 - 10 am : Batman</h3>
-                                <span class="quickAdd"><a href="notes.html"><li class="mdi-content-add-circle-outline"></li></a></span>
-                            </div>
-                            <div class="panel-body">
-                          Hi all
-<br>
-For this Thursday in class can I have a print out of the report for assignment 2 from each group (1 report per group), in addition to uploading a PDF of the report to TurnitIn on Blackboard.
-                                <br>
-Thanks
-Lisa
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-
-                    </div>
                 </div>
             </div>
         </div>
-        <!-- /#page-content-wrapper -->
+
+
+
+
 
     </div>
-    <!-- /#wrapper -->
+
+
     <footer class="footer">
-
-
-
         <div class="container">
             <div class="row-fluid">
                 <div class="fatButtons">
@@ -253,15 +118,17 @@ Lisa
                 </div>
             </div>
         </div>
-
-
-
-
-
     </footer>
-    <!-- jQuery -->
-    <script src="assets/js/jquery.js"></script>
 
+
+
+
+
+    <script type='text/javascript' src="https://cdn.firebase.com/js/client/1.1.1/firebase.js"></script>
+    <script type='text/javascript' src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.0.0/jquery.serialize-object.compiled.js"></script>
+    <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/path.js/0.8.4/path.min.js"></script>
+    <script src="assets/js/firebase.js" type="text/javascript"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="assets/js/bootstrap.js"></script>
 
@@ -269,16 +136,16 @@ Lisa
     <script src="assets/js/material.min.js"></script>
     <!-- Menu Toggle Script -->
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // This command is used to initialize some elements and make them work properly
             $.material.init();
         });
-        $("#menu-toggle").click(function (e) {
+        $("#menu-toggle").click(function(e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
         });
-    </script>
 
+    </script>
 </body>
 
 </html>
