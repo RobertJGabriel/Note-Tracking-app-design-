@@ -358,7 +358,7 @@ window.onload = function () {
 
         Path.map("#/").to(prepRoute);
         Path.map("#/logout").to(prepRoute);
-        Path.map("#/logout").to(prepRoute);
+        Path.map("#/notes").to(prepRoute);
         Path.map("#/profile").to(prepRoute);
 
         Path.root("#/");
