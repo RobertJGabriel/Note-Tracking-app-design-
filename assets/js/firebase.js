@@ -20,6 +20,14 @@ window.onload = function () {
                 controller: 'profile',
                 authRequired: true // must be logged in to get here
             },
+
+            '#/notes': {
+                form: 'frmNotes',
+                controller: 'notes',
+                authRequired: true // must be logged in to get here
+            },
+
+
         };
 
         // create the object to store our controllers
