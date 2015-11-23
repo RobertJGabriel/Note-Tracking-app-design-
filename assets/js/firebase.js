@@ -254,7 +254,7 @@ window.onload = function () {
             }
 
             // Load user info
-            userRef = rootRef.child('users').child(user.uid);
+            userRef = rootRef.child('notes').child(user.uid);
             userRef.once('value', function (snap) {
                 var user = snap.val();
                 if (!user) {
@@ -262,7 +262,7 @@ window.onload = function () {
                 }
 
                 // set the fields
-                form.find('#subjectInput').val(user.subjectNotes);
+                form.find('#subjectInput').val(user.subjectInput);
                 form.find('#textArea').val(user.textArea);
             });
 
