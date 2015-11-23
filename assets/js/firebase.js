@@ -25,7 +25,7 @@ window.onload = function () {
                 form: 'frmNotes',
                 controller: 'notes',
                 authRequired: true // must be logged in to get here
-            },
+            }
 
 
         };
