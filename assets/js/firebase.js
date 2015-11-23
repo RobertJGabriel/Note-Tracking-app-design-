@@ -3,7 +3,7 @@ window.onload = function () {
         "use strict";
 
         // the main firebase reference
-        var rootRef = new Firebase('https://projectbird.firebaseio.com/');
+        var rootRef = new Firebase('https://docs-sandbox.firebaseio.com/web/uauth');
 
         // pair our routes to our form elements and controller
         var routeMap = {
@@ -15,19 +15,15 @@ window.onload = function () {
                 form: 'frmLogout',
                 controller: 'logout'
             },
+            '#/notes': {
+                form: 'frmNotes',
+                controller: 'notes'
+            },
             '#/profile': {
                 form: 'frmProfile',
                 controller: 'profile',
                 authRequired: true // must be logged in to get here
             },
-
-            '#/notes': {
-                form: 'frmNotes',
-                controller: 'notes',
-                authRequired: true // must be logged in to get here
-            }
-
-
         };
 
         // create the object to store our controllers
@@ -197,16 +193,16 @@ window.onload = function () {
             rootRef.unauth();
         };
 
-        controllers.register = function (form) {
+        controllers.notes = function (form) {
 
-            // Form submission for registering
+            // Form submission for notesing
             form.on('submit', function (e) {
 
                 var userAndPass = $(this).serializeObject();
                 var loginPromise = createUserAndLogin(userAndPass);
                 e.preventDefault();
 
-                handleAuthResponse(loginPromise, 'profile');
+                //  handleAuthResponse(loginPromise, 'profile');
 
             });
 
@@ -217,9 +213,9 @@ window.onload = function () {
             var user = rootRef.getAuth();
             var userRef;
 
-            // If no current user send to register page
+            // If no current user send to notes page
             if (!user) {
-                routeTo('register');
+                routeTo('notes');
                 return;
             }
 
@@ -255,56 +251,6 @@ window.onload = function () {
 
         };
 
-
-        controllers.notes = function (form) {
-            // Check the current user
-            var user = rootRef.getAuth();
-            var notesRef;
-
-            // If no current user send to register page
-            if (!user) {
-                routeTo('register');
-                return;
-            }
-
-            // Load user info
-            notesRef = rootRef.child('users').child(user.uid);
-            notesRef.once('value', function (snap) {
-                var user = snap.val();
-                if (!user) {
-                    return;
-                }
-
-                // set the fields
-                form.find('#subject').val(user.subject);
-                form.find('#notes').val(user.notes);
-            });
-
-            // Save user's info to Firebase
-            form.on('submit', function (e) {
-                e.preventDefault();
-                var userInfo = $(this).serializeObject();
-
-                notesRef.set(userInfo, function onComplete() {
-
-                    // show the message if write is successful
-                    showAlert({
-                        title: 'Successfully saved!',
-                        detail: 'You are still logged in',
-                        className: 'alert-success'
-                    });
-
-                });
-            });
-
-        };
-
-
-
-
-
-
-
         /// Routing
         ////////////////////////////////////////
 
@@ -315,10 +261,10 @@ window.onload = function () {
             var currentUser = rootRef.getAuth();
 
             // if authentication is required and there is no
-            // current user then go to the register page and
+            // current user then go to the notes page and
             // stop executing
             if (formRoute.authRequired && !currentUser) {
-                routeTo('register');
+                routeTo('notes');
                 return;
             }
 
@@ -353,7 +299,7 @@ window.onload = function () {
         /// Routes
         ///  #/         - Login
         //   #/logout   - Logut
-        //   #/register - Register
+        //   #/notes - notes
         //   #/profile  - Profile
 
         Path.map("#/").to(prepRoute);
