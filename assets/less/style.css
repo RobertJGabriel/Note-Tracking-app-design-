@@ -122,6 +122,7 @@ body {
     }
     #sidebar-wrapper {
         width: 250px;
+        position: absolute;
     }
     #wrapper.toggled #sidebar-wrapper {
         width: 0;

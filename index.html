@@ -43,6 +43,8 @@
                 </li>
                 <li> <a href="#/profile">Profile</a>
                 </li>
+                <li> <a href="#/notes">Notes</a>
+                </li>
             </ul>
         </div>
         <div id="container" class="container">
@@ -66,6 +68,29 @@
                 </form>
                 <!-- / LOGOUT -->
 
+
+                <!-- Notes -->
+                <form role="form" class="col-md-4 area" id="frmNotes">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="form-group">
+                                <input class="form-control floating-label" id="subjectInput" name="subjectInput" type="text" placeholder="Title" data-hint="You should really write the class and date here">
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+
+                                <div class="col-lg-10">
+                                    <textarea class="form-control" rows="14" name="textArea" id="textArea" placeholder="Focus to show the hint" data-hint="You should really write something here"></textarea>
+
+                                </div>
+
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </div>
+                </form>
+                <!-- / Notes -->
 
 
 

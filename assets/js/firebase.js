@@ -15,13 +15,16 @@ window.onload = function () {
                 form: 'frmLogout',
                 controller: 'logout'
             },
-            '#/register': {
-                form: 'frmRegister',
-                controller: 'register'
-            },
             '#/profile': {
                 form: 'frmProfile',
                 controller: 'profile',
+                authRequired: true // must be logged in to get here
+            },
+
+
+            '#/notes': {
+                form: 'frmNotes',
+                controller: 'notes',
                 authRequired: true // must be logged in to get here
             },
         };
@@ -193,20 +196,7 @@ window.onload = function () {
             rootRef.unauth();
         };
 
-        controllers.register = function (form) {
 
-            // Form submission for registering
-            form.on('submit', function (e) {
-
-                var userAndPass = $(this).serializeObject();
-                var loginPromise = createUserAndLogin(userAndPass);
-                e.preventDefault();
-
-                handleAuthResponse(loginPromise, 'profile');
-
-            });
-
-        };
 
         controllers.profile = function (form) {
             // Check the current user
@@ -215,7 +205,7 @@ window.onload = function () {
 
             // If no current user send to register page
             if (!user) {
-                routeTo('register');
+                routeTo('login');
                 return;
             }
 
@@ -251,6 +241,58 @@ window.onload = function () {
 
         };
 
+
+        controllers.notes = function (form) {
+            // Check the current user
+            var user = rootRef.getAuth();
+            var userRef;
+
+            // If no current user send to register page
+            if (!user) {
+                routeTo('login');
+                return;
+            }
+
+            // Load user info
+            userRef = rootRef.child('users').child(user.uid);
+            userRef.once('value', function (snap) {
+                var user = snap.val();
+                if (!user) {
+                    return;
+                }
+
+                // set the fields
+                form.find('#subjectInput').val(user.subjectNotes);
+                form.find('#textArea').val(user.textArea);
+            });
+
+            // Save user's info to Firebase
+            form.on('submit', function (e) {
+                e.preventDefault();
+                var userInfo = $(this).serializeObject();
+
+                userRef.set(userInfo, function onComplete() {
+
+                    // show the message if write is successful
+                    showAlert({
+                        title: 'Successfully saved!',
+                        detail: 'You are still logged in',
+                        className: 'alert-success'
+                    });
+
+                });
+            });
+
+        };
+
+
+
+
+
+
+
+
+
         /// Routing
         ////////////////////////////////////////
 
@@ -264,7 +306,7 @@ window.onload = function () {
             // current user then go to the register page and
             // stop executing
             if (formRoute.authRequired && !currentUser) {
-                routeTo('register');
+                routeTo('login');
                 return;
             }
 
@@ -304,9 +346,9 @@ window.onload = function () {
 
         Path.map("#/").to(prepRoute);
         Path.map("#/logout").to(prepRoute);
-        Path.map("#/register").to(prepRoute);
-        Path.map("#/profile").to(prepRoute);
 
+        Path.map("#/profile").to(prepRoute);
+        Path.map("#/notes").to(prepRoute);
         Path.root("#/");
 
         /// Initialize
