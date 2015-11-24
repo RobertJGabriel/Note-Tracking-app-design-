@@ -14,177 +14,187 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-material-light-blue shadow-z-1" style="margin-bottom: 0px;">
-        <div class="navbar-header">
-            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
-                <li class="mdi-navigation-menu"></li>
-            </a>
+
+    <div id="overview">
+        <nav class="navbar navbar-material-light-blue" style="margin-bottom: 0px;background-color:transparent !important;">
+            <div class="navbar-header">
+                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+                    <li class="mdi-navigation-menu" style="font-size: 31px;color: white;"></li>
+                </a>
+            </div>
+        </nav>
+        <!-- ALERT BOX -->
+
+
+        <div id="alert" class="alert alert-dismissible alert-warning" style="margin-bottom:0px;">
+            <button type="button" class="close" data-dismiss="alert">X</button>
+            <h4 id="alert-title">You are not logged in</h4>
+            <p id="alert-detail"></p>
         </div>
-    </nav>
-    <!-- ALERT BOX -->
-
-
-    <div id="alert" class="alert alert-dismissible alert-warning" style="margin-bottom:0px;">
-        <button type="button" class="close" data-dismiss="alert">×</button>
-        <h4 id="alert-title">You are not logged in</h4>
-        <p id="alert-detail"></p>
-    </div>
-    <!-- / ALERT BOX -->
+        <!-- / ALERT BOX -->
 
 
 
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper" class="nobottom">
-            <ul class="sidebar-nav">
-                <li> <a href="#/">Login</a>
-                </li>
-                <li> <a href="#/logout">Logout</a>
-                </li>
-                <li> <a href="#/profile">Profile</a>
-                </li>
-                <li> <a href="#/notes">Notes</a>
-                </li>
-                <li><a href="#/calendar">calendar</a></li>
-            </ul>
-        </div>
-        <div id="container" class="container">
-            <div class="row">
-                <div class="col-md-4">
-
-                </div>
 
 
-                <!-- LOGIN -->
-                <form role="form" class="col-md-4 area" id="frmLogin">
-                    <h2>Login</h2>
-                    <a href="#" class="btn btn-info bt-social" data-provider="twitter">Twitter</a>
-                </form>
-                <!-- / LOGIN -->
 
 
-                <!-- LOGOUT -->
-                <form role="form" class="col-md-4 area" id="frmLogout">
-                    <h2>You are logged out!</h2>
-                </form>
-                <!-- / LOGOUT -->
 
 
-                <!-- Notes -->
-                <form role="form" class="col-md-4 area" id="frmNotes">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="form-group">
-                                <input class="form-control floating-label" id="subjectInput" name="subjectInput" type="text" placeholder="Title" data-hint="You should really write the class and date here">
+
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper" class="nobottom">
+                <ul class="sidebar-nav">
+                    <li> <a href="#/">Login</a>
+                    </li>
+                    <li> <a href="#/logout">Logout</a>
+                    </li>
+                    <li> <a href="#/profile">Profile</a>
+                    </li>
+                    <li> <a href="#/notes">Notes</a>
+                    </li>
+                    <li><a href="#/calendar">calendar</a></li>
+                </ul>
+            </div>
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-md-4">
+
+                    </div>
+
+
+                    <!-- LOGIN -->
+                    <form role="form" class="col-md-4 area" id="frmLogin">
+                        <img src="assets/img/planote2.png" class="img-responsive" alt="logo">
+                        <a href="#" class="btn btn-info bt-social width" data-provider="twitter">Login</a>
+                    </form>
+                    <!-- / LOGIN -->
+
+
+                    <!-- LOGOUT -->
+                    <form role="form" class="col-md-4 area" id="frmLogout">
+                        <h2>You are logged out!</h2>
+                    </form>
+                    <!-- / LOGOUT -->
+
+
+                    <!-- Notes -->
+                    <form role="form" class="col-md-4 area" id="frmNotes">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="form-group">
+                                    <input class="form-control floating-label" id="subjectInput" name="subjectInput" type="text" placeholder="Title" data-hint="You should really write the class and date here">
+                                </div>
                             </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="form-group">
+                            <div class="panel-body">
+                                <div class="form-group">
 
-                                <div class="col-lg-10">
-                                    <textarea class="form-control" rows="14" name="textArea" id="textArea" placeholder="Focus to show the hint" data-hint="You should really write something here"></textarea>
+                                    <div class="col-lg-10">
+                                        <textarea class="form-control" rows="14" name="textArea" id="textArea" placeholder="Focus to show the hint" data-hint="You should really write something here"></textarea>
+
+                                    </div>
 
                                 </div>
-
+                                <button type="submit" class="btn btn-primary">Update</button>
                             </div>
-                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </form>
+                    <!-- / Notes -->
+
+
+
+                    <!-- calendar -->
+
+
+                    <div class="responsive-calendar area" id="frmcalendar">
+                        <div class="controls">
+                            <a class="pull-left" data-go="prev">
+                                <div class="btn btn-primary">Prev</div>
+                            </a>
+                            <h4><span data-head-year></span> <span data-head-month></span></h4>
+                            <a class="pull-right" data-go="next">
+                                <div class="btn btn-primary">Next</div>
+                            </a>
+                        </div>
+                        <hr/>
+                        <div class="day-headers">
+                            <div class="day header">Mon</div>
+                            <div class="day header">Tue</div>
+                            <div class="day header">Wed</div>
+                            <div class="day header">Thu</div>
+                            <div class="day header">Fri</div>
+                            <div class="day header">Sat</div>
+                            <div class="day header">Sun</div>
+                        </div>
+                        <div class="days" data-group="days">
+
                         </div>
                     </div>
-                </form>
-                <!-- / Notes -->
+                    <!-- Responsive calendar - END -->
 
 
 
-                <!-- calendar -->
+
+                    <!-- / calendar -->
 
 
-                <div class="responsive-calendar area" id="frmcalendar">
-                    <div class="controls">
-                        <a class="pull-left" data-go="prev">
-                            <div class="btn btn-primary">Prev</div>
-                        </a>
-                        <h4><span data-head-year></span> <span data-head-month></span></h4>
-                        <a class="pull-right" data-go="next">
-                            <div class="btn btn-primary">Next</div>
-                        </a>
+
+                    <!-- PROFILE -->
+                    <form role="form" class="col-md-4 area" id="frmProfile">
+                        <h2>Profile</h2>
+
+                        <div class="form-group">
+                            <label for="txtName">Name</label>
+                            <input type="text" class="form-control" id="txtName" placeholder="Name" name="name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="ddlDino">Favorite Dinosaur</label>
+                            <select id="ddlDino" name="favoriteDinosaur" class="form-control">
+                                <option>None</option>
+                                <option>Pteranodon</option>
+                                <option>Lambeosaurus</option>
+                                <option>Stegosaurus</option>
+                                <option>Daspletosaurus</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                    <!-- / PROFILE -->
+
+
+
+
+                    <div class="col-md-4">
+
                     </div>
-                    <hr/>
-                    <div class="day-headers">
-                        <div class="day header">Mon</div>
-                        <div class="day header">Tue</div>
-                        <div class="day header">Wed</div>
-                        <div class="day header">Thu</div>
-                        <div class="day header">Fri</div>
-                        <div class="day header">Sat</div>
-                        <div class="day header">Sun</div>
-                    </div>
-                    <div class="days" data-group="days">
-
-                    </div>
-                </div>
-                <!-- Responsive calendar - END -->
-
-
-
-
-                <!-- / calendar -->
-
-
-
-                <!-- PROFILE -->
-                <form role="form" class="col-md-4 area" id="frmProfile">
-                    <h2>Profile</h2>
-
-                    <div class="form-group">
-                        <label for="txtName">Name</label>
-                        <input type="text" class="form-control" id="txtName" placeholder="Name" name="name" />
-                    </div>
-                    <div class="form-group">
-                        <label for="ddlDino">Favorite Dinosaur</label>
-                        <select id="ddlDino" name="favoriteDinosaur" class="form-control">
-                            <option>None</option>
-                            <option>Pteranodon</option>
-                            <option>Lambeosaurus</option>
-                            <option>Stegosaurus</option>
-                            <option>Daspletosaurus</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Update</button>
-                </form>
-                <!-- / PROFILE -->
-
-
-
-
-                <div class="col-md-4">
-
                 </div>
             </div>
+
+
+
+
+
         </div>
 
 
-
-
-
+        <footer class="footer">
+            <div class="container">
+                <div class="row-fluid">
+                    <div class="fatButtons">
+                        <li style="text-align:center;width:100%;font-size:40px;" class="mdi-action-home mdi-material-red "></li>
+                    </div>
+                    <div class="fatButtons">
+                        <li style="text-align:center;width:100%;font-size:40px;" class="mdi-action-search mdi-material-red "></li>
+                    </div>
+                    <div class="fatButtons">
+                        <li style="text-align:center;width:100%;font-size:40px;" class="mdi-action-label mdi-material-red "></li>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-
-
-    <footer class="footer">
-        <div class="container">
-            <div class="row-fluid">
-                <div class="fatButtons">
-                    <li style="text-align:center;width:100%;font-size:40px;" class="mdi-action-home"></li>
-                </div>
-                <div class="fatButtons">
-                    <li style="text-align:center;width:100%;font-size:40px;" class="mdi-action-search"></li>
-                </div>
-                <div class="fatButtons">
-                    <li style="text-align:center;width:100%;font-size:40px;" class="mdi-action-label"></li>
-                </div>
-            </div>
-        </div>
-    </footer>
-
 
 
 
