@@ -7,6 +7,17 @@
 
 /* Toggle Styles */
 
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li,
+a,
+font {
+    color: #fff;
+}
 #frmLogin {
     display: block;
     width: 200px;
