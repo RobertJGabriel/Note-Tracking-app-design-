@@ -20,21 +20,23 @@ window.onload = function () {
                 controller: 'profile',
                 authRequired: true // must be logged in to get here
             },
-
-
             '#/notes': {
                 form: 'frmNotes',
                 controller: 'notes',
                 authRequired: true // must be logged in to get here
             },
-
-
-
             '#/calendar': {
                 form: 'frmcalendar',
                 controller: 'calendar',
                 authRequired: true // must be logged in to get here
             },
+            '#/dashboard': {
+                form: 'frmdashboard',
+                controller: 'dashboard',
+                authRequired: true // must be logged in to get here
+            },
+
+
         };
 
         // create the object to store our controllers
@@ -188,7 +190,7 @@ window.onload = function () {
                 e.preventDefault();
 
                 socialLoginPromise = thirdPartyLogin(provider);
-                handleAuthResponse(socialLoginPromise, 'profile');
+                handleAuthResponse(socialLoginPromise, 'dashboard');
 
             });
 
@@ -307,7 +309,18 @@ window.onload = function () {
 
         };
 
+        controllers.dashboard = function (form) {
+            // Check the current user
+            var user = rootRef.getAuth();
+            var userRef;
 
+            // If no current user send to register page
+            if (!user) {
+                routeTo('login');
+                return;
+            }
+
+        };
 
 
 
@@ -369,7 +382,11 @@ window.onload = function () {
         Path.map("#/calendar").to(prepRoute);
         Path.map("#/profile").to(prepRoute);
         Path.map("#/notes").to(prepRoute);
+        Path.map("#/dashboard").to(prepRoute);
         Path.root("#/");
+
+
+
 
         /// Initialize
         ////////////////////////////////////////

@@ -26,10 +26,62 @@ font {
     margin-right: auto;
     margin-top: 200px;
 }
+#dashboard {
+    height: 100%;
+}
 #overview {
     background-color: black;
     width: 100%;
     height: 100%;
+}
+#circle {
+    height: 600px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    overflow: scroll;
+}
+#circle > ul {
+    height: 200px;
+    padding: 0;
+    list-style: none;
+}
+#circle > ul> li {
+    width: 180px;
+    height: 180px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    border: 20px solid #ec407a;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 300px;
+}
+#circle > ul> li:hover {
+    width: 200px;
+    height: 200px;
+    line-height: 100px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+#circle > ul> li:nth-child(2) {
+    border: 20px solid #607D8B;
+}
+#circle > ul> li:nth-child(3) {
+    border: 20px solid #03A9F4;
+}
+#circle > ul> li:nth-child(4) {
+    border: 20px solid #FF5722;
+}
+#circle > ul> li:nth-child(5) {
+    border: 20px solid #4CAF50;
+}
+#circle > ul> li >a >h3 {
+    color: #939599;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 5.2em;
+    line-height: 90px;
 }
 .width {
     width: 100%;

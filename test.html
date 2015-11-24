@@ -33,20 +33,28 @@
         </div>
         <!-- / ALERT BOX -->
 
+
+
+
+
+
+
+
+
+
         <div id="wrapper">
             <!-- Sidebar -->
             <div id="sidebar-wrapper" class="nobottom">
                 <ul class="sidebar-nav">
-                    <li> <a href="#/dashboard">Dashboard</a>
-                    </li>
                     <li> <a href="#/">Login</a>
                     </li>
                     <li> <a href="#/logout">Logout</a>
                     </li>
                     <li> <a href="#/profile">Profile</a>
                     </li>
-                    <li><a href="#/calendar">calendar</a>
+                    <li> <a href="#/notes">Notes</a>
                     </li>
+                    <li><a href="#/calendar">calendar</a></li>
                 </ul>
             </div>
             <div class="container-fluid">
@@ -56,62 +64,40 @@
 
                     </div>
 
-                    <!-- LOGIN -->
-                    <form role="form" class="col-md-4 area" id="frmLogin">
-                        <img src="assets/img/planote2.png" class="img-responsive" alt="logo">
-                        <a href="#" class="btn btn-info bt-social width" data-provider="twitter">Login</a>
-                    </form>
-                    <!-- / LOGIN -->
 
-                    <!-- LOGOUT -->
-                    <form role="form" class="col-md-4 area" id="frmLogout">
-                        <h2>You are logged out!</h2>
-                    </form>
-                    <!-- / LOGOUT -->
 
-                    <!-- Notes -->
-                    <form role="form" class="col-md-4 area" id="frmNotes">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="form-group">
-                                    <input class="form-control floating-label" id="subjectInput" name="subjectInput" type="text" placeholder="Title" data-hint="You should really write the class and date here">
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                <div class="form-group">
 
-                                    <div class="col-lg-10">
-                                        <textarea class="form-control" rows="14" name="textArea" id="textArea" placeholder="Focus to show the hint" data-hint="You should really write something here"></textarea>
-
-                                    </div>
-
-                                </div>
-                                <button type="submit" class="btn btn-primary">Update</button>
-                            </div>
-                        </div>
-                    </form>
-                    <!-- / Notes -->
 
                     <!-- Dashboard -->
-                    <div class="responsive-calendar area" id="frmdashboard">
+                    <div class="responsive-calendar" id="frmdashboard">
                         <div id="dashboard">
 
                             <div id="circle">
+
                                 <ul>
                                     <li>
-                                        <a href="#/notes"><h3>q</h3></a>
+
+                                        <a href=""><h3>q</h3></a>
+                                    </li>
+
+                                    <li>
+
+                                        <a href=""><h3>c</h3></a>
                                     </li>
                                     <li>
-                                        <a href="#/notes"><h3>c</h3></a>
+
+                                        <a href=""><h3>x</h3></a>
+
                                     </li>
                                     <li>
-                                        <a href="#/notes"><h3>x</h3></a>
+
+                                        <a href=""><h3>p</h3></a>
+
                                     </li>
                                     <li>
-                                        <a href="#/notes"><h3>p</h3></a>
-                                    </li>
-                                    <li>
-                                        <a href="#/notes"><h3>t</h3></a>
+
+                                        <a href=""><h3>t</h3></a>
+
                                     </li>
                                 </ul>
 
@@ -120,63 +106,18 @@
                     </div>
                     <!-- / Dashboard -->
 
-                    <!-- calendar -->
 
-                    <div class="responsive-calendar area" id="frmcalendar">
-                        <div class="controls">
-                            <a class="pull-left" data-go="prev">
-                                <div class="btn btn-primary">Prev</div>
-                            </a>
-                            <h4><span data-head-year></span> <span data-head-month></span></h4>
-                            <a class="pull-right" data-go="next">
-                                <div class="btn btn-primary">Next</div>
-                            </a>
-                        </div>
-                        <hr/>
-                        <div class="day-headers">
-                            <div class="day header">Mon</div>
-                            <div class="day header">Tue</div>
-                            <div class="day header">Wed</div>
-                            <div class="day header">Thu</div>
-                            <div class="day header">Fri</div>
-                            <div class="day header">Sat</div>
-                            <div class="day header">Sun</div>
-                        </div>
-                        <div class="days" data-group="days">
-
-                        </div>
-                    </div>
-                    <!-- Responsive calendar - END -->
-
-                    <!-- / calendar -->
-
-                    <!-- PROFILE -->
-                    <form role="form" class="col-md-4 area" id="frmProfile">
-                        <h2>Profile</h2>
-
-                        <div class="form-group">
-                            <label for="txtName">Name</label>
-                            <input type="text" class="form-control" id="txtName" placeholder="Name" name="name" />
-                        </div>
-                        <div class="form-group">
-                            <label for="ddlDino">Favorite Dinosaur</label>
-                            <select id="ddlDino" name="favoriteDinosaur" class="form-control">
-                                <option>None</option>
-                                <option>Pteranodon</option>
-                                <option>Lambeosaurus</option>
-                                <option>Stegosaurus</option>
-                                <option>Daspletosaurus</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Update</button>
-                    </form>
-                    <!-- / PROFILE -->
 
                     <div class="col-md-4">
 
                     </div>
                 </div>
             </div>
+
+
+
+
+
         </div>
 
 
@@ -196,6 +137,9 @@
             </div>
         </footer>
     </div>
+
+
+
 
     <script type='text/javascript' src="https://cdn.firebase.com/js/client/1.1.1/firebase.js"></script>
     <script type='text/javascript' src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
