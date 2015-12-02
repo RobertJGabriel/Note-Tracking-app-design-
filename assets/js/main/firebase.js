@@ -201,6 +201,7 @@ window.onload = function () {
 
         // logout immediately when the controller is invoked
         controllers.logout = function (form) {
+            document.getElementById('frmLogin').style.display = 'none';
             rootRef.unauth();
         };
 
