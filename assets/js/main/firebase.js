@@ -35,8 +35,6 @@ window.onload = function () {
                 controller: 'dashboard',
                 authRequired: true // must be logged in to get here
             },
-
-
         };
 
         // create the object to store our controllers
@@ -254,6 +252,7 @@ window.onload = function () {
 
         controllers.notes = function (form) {
             // Check the current user
+            document.getElementById('frmLogin').style.display = 'none';
             var user = rootRef.getAuth();
             var userRef;
 
@@ -297,6 +296,7 @@ window.onload = function () {
 
 
         controllers.calendar = function (form) {
+                        document.getElementById('frmLogin').style.display = 'none';
             // Check the current user
             var user = rootRef.getAuth();
             var userRef;
@@ -310,6 +310,7 @@ window.onload = function () {
         };
 
         controllers.dashboard = function (form) {
+                        document.getElementById('frmLogin').style.display = 'none';
             // Check the current user
             var user = rootRef.getAuth();
             var userRef;
