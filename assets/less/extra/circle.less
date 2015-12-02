@@ -22,7 +22,7 @@ font {
     height: @height3;
     width: @width3;
 }
-#circle2 {
+#circle {
     height: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -30,12 +30,40 @@ font {
     overflow-x: hidden;
     width: 300px;
 }
-#circle2>ul {
+#circle>ul {
     height: @height1;
     list-style: none;
     padding: 0;
+}#circle>ul>li {
+    background-color: white;
+    border-radius: 300px;
+    border: 20px solid #ec407a;
+    height: 180px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 180px;
+    &:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        height: @height1;
+        line-height: 100px;
+        width: 200px;
+    }
+    &:nth-child(2) {
+        border: 20px solid #607D8B;
+    }
+    &:nth-child(3) {
+        border: 20px solid #03A9F4;
+    }
+    &:nth-child(4) {
+        border: 20px solid #FF5722;
+    }
+    &:nth-child(5) {
+        border: 20px solid #4CAF50;
+    }
 }
-#circle2>ul>li>a>h3 {
+#circle>ul>li>a>h3 {
     color: #939599;
     font-size: 5.2em;
     line-height: 90px;
