@@ -74,3 +74,104 @@ font {
 .width {
     width: @width3;
 }
+.circle {
+    border-radius: 50%;
+    border: 1px solid black;
+    height: 20em;
+    list-style: none;
+    margin: 1em auto;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 20em;
+}
+li {
+    height: 50%;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-origin: 0% 100%;
+    width: 50%;
+    &:first-child {
+        transform: rotate(0deg) skewY(-60deg);
+        .text {
+            background: green;
+        }
+    }
+    &:nth-child(2) {
+        transform: rotate(30deg) skewY(-60deg);
+        .text {
+            background: tomato;
+        }
+    }
+    &:nth-child(3) {
+        transform: rotate(60deg) skewY(-60deg);
+        .text {
+            background: aqua;
+        }
+    }
+    &:nth-child(4) {
+        transform: rotate(90deg) skewY(-60deg);
+        .text {
+            background: yellow;
+        }
+    }
+    &:nth-child(5) {
+        transform: rotate(120deg) skewY(-60deg);
+        .text {
+            background: orange;
+        }
+    }
+    &:nth-child(6) {
+        transform: rotate(150deg) skewY(-60deg);
+        .text {
+            background: purple;
+        }
+    }
+    &:nth-child(7) {
+        transform: rotate(180deg) skewY(-60deg);
+        .text {
+            background: cyan;
+        }
+    }
+    &:nth-child(8) {
+        transform: rotate(210deg) skewY(-60deg);
+        .text {
+            background: brown;
+        }
+    }
+    &:nth-child(9) {
+        transform: rotate(240deg) skewY(-60deg);
+        .text {
+            background: gray;
+        }
+    }
+    &:nth-child(10) {
+        transform: rotate(270deg) skewY(-60deg);
+        .text {
+            background: pink;
+        }
+    }
+    &:nth-child(11) {
+        transform: rotate(300deg) skewY(-60deg);
+        .text {
+            background: maroon;
+        }
+    }
+    &:nth-child(12) {
+        transform: rotate(330deg) skewY(-60deg);
+        .text {
+            background: gold;
+        }
+    }
+}
+.text {
+    height: 200%;
+    left: -100%;
+    padding-top: 20px;
+    position: absolute;
+    text-align: center;
+    transform: skewY(60deg) rotate(15deg);
+    width: 200%;
+}
