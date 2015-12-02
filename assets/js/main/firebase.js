@@ -210,7 +210,7 @@ window.onload = function () {
             // Check the current user
             var user = rootRef.getAuth();
             var userRef;
-
+            document.getElementById('frmLogin').style.display = 'none';
             // If no current user send to register page
             if (!user) {
                 routeTo('login');
@@ -296,7 +296,7 @@ window.onload = function () {
 
 
         controllers.calendar = function (form) {
-                        document.getElementById('frmLogin').style.display = 'none';
+            document.getElementById('frmLogin').style.display = 'none';
             // Check the current user
             var user = rootRef.getAuth();
             var userRef;
@@ -310,7 +310,7 @@ window.onload = function () {
         };
 
         controllers.dashboard = function (form) {
-                        document.getElementById('frmLogin').style.display = 'none';
+            document.getElementById('frmLogin').style.display = 'none';
             // Check the current user
             var user = rootRef.getAuth();
             var userRef;
