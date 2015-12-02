@@ -9,14 +9,18 @@
 @height5: 100%; // Appears 2 times
 @mobile: ~"only screen and (max-width : 768px)";
 @mobile2: ~"only screen and (min-width:460px)";
+@height3: 100%; // Appears 4 times
 #frmLogin {
     display: block;
     height: 400px;
     margin-top: 200px;
 }
+html {
+    height: @height3;
+}
 body {
-    max-height: 1136px;
-    max-width: 480px;
+    height: @height3;
+    min-width: 480px;
 }
 .fatButtons {
     float: left;
