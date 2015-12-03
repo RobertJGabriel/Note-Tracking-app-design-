@@ -34,7 +34,7 @@ window.onload = function () {
                 form: 'frmdashboard',
                 controller: 'dashboard',
                 authRequired: true // must be logged in to get here
-            },
+            }
         };
 
         // create the object to store our controllers
@@ -336,14 +336,23 @@ window.onload = function () {
             // grab the config object to get the form element and controller
             var formRoute = routeMap[path];
             var currentUser = rootRef.getAuth();
-
+            
+                        document.getElementById("loginButton").style.display ='none';
+document.getElementById("logoutButton").style.display ='none';    
+            
             // if authentication is required and there is no
             // current user then go to the register page and
             // stop executing
             if (formRoute.authRequired && !currentUser) {
                 routeTo('login');
+                document.getElementById("loginButton").style.display ='block';
                 return;
             }
+            
+            if (currentUser){
+                document.getElementById("logoutButton").style.display ='block';
+            }
+            
 
             // wrap the upcoming form in jQuery
             var upcomingForm = $('#' + formRoute.form);
