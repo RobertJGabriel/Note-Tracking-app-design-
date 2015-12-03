@@ -337,21 +337,24 @@ window.onload = function () {
             var formRoute = routeMap[path];
             var currentUser = rootRef.getAuth();
             
-                        document.getElementById("loginButton").style.display ='none';
-document.getElementById("logoutButton").style.display ='none';    
+                         
             
             // if authentication is required and there is no
             // current user then go to the register page and
             // stop executing
             if (formRoute.authRequired && !currentUser) {
+               document.getElementById("loginButton").style.display ='block';
+document.getElementById("logoutButton").style.display ='none';
                 routeTo('login');
-                document.getElementById("loginButton").style.display ='block';
+               
                 return;
+            }else{
+                
+                 document.getElementById("logoutButton").style.display ='block';
+document.getElementById("loginButton").style.display ='none';
             }
             
-            if (currentUser){
-                document.getElementById("logoutButton").style.display ='block';
-            }
+          
             
 
             // wrap the upcoming form in jQuery
